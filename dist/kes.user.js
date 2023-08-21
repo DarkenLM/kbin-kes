@@ -2,7 +2,7 @@
 // @name	KES DEV
 // @namespace	https://github.com/DarkenLM
 // @license	MIT
-// @version	2.2.2-dev172
+// @version	2.2.2-dev173
 // @description	Kbin Enhancement Suite - Development
 // @author	DarkenLM
 // @match https://kbin.social/*
@@ -77,7 +77,7 @@ const tool = safeGM("info").script.name;
 const repositoryURL = "https://github.com/DarkenLM/kbin-kes/";
 const branch = "rewrite"
 const helpersPath = "helpers/"
-const branchPath = repositoryURL + "raw/" + branch + "/"
+const branchPath = repositoryURL + "raw/" + branch + "/" + "dist" + "/"
 const versionFile = branchPath + "VERSION";
 const updateURL = branchPath + "kes.user.js";
 const bugURL = repositoryURL + "issues"
