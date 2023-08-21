@@ -40,7 +40,8 @@ async function init(exclusions) {
             path.join(options.paths.root, "dist/__server"),
             path.join(options.paths.root, "dist/helpers"),
             path.join(options.paths.root, "dist/kes.user.js"),
-            path.join(options.paths.root, "dist/VERSION")
+            path.join(options.paths.root, "dist/VERSION"),
+            ...exclusions.map(p => path.join(options.paths.root, "dist", p))
         ];
 
         for (const ffile of files) {
@@ -139,6 +140,8 @@ if (require.main === module) {
     if (!args.options.exclude) exclusions = [];
     else if (args.options.exclude.length === 1 && args.options.exclude[0] === "undefined") exclusions = [];
     else exclusions = args.options.exclude;
+
+    console.log("EXCLUSIONS:", exclusions)
 
 	init(exclusions);
 } else {
