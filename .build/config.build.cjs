@@ -85,6 +85,8 @@ const config = {
              * **Automatically computed. Manual definition will be overwritten.**
              */
             slug: "", // PostDec computed
+            /** Build output directory to be used for file fetching. */
+            buildDir: "", // PostDec computed
         },
         /** The source file for the KES Script, relative to the lib path. */
         base_file: "kes.js",
@@ -160,6 +162,7 @@ config.kes.manifest = `./${config.kes.helpersDir}/${config.kes.manifestFile}`
 config.kes.github.branch = executeCmd("git branch --show-current", false).replace("\n", "") ?? null;
 config.kes.github.owner = getOwner(true);
 config.kes.github.slug = `${config.kes.github.owner}/${config.kes.github.name}`;
+config.kes.github.buildDir = config.distDir;
 
 module.exports.config = config;
 module.exports.options = options;

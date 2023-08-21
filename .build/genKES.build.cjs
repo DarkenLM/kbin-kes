@@ -281,7 +281,7 @@ async function createKES(options) {
             const repositoryURL = "https://github.com/${github.slug}/";
             const branch = "${github.branch}"
             const helpersPath = "${helpersDir.replaceAll("\\", "/")}/"
-            const branchPath = repositoryURL + "raw/" + branch + "/"
+            const branchPath = repositoryURL + "raw/" + branch + "/" + "${github.buildDir}" + "/"
             const versionFile = branchPath + "VERSION";
             const updateURL = branchPath + "kes.user.js";
             const bugURL = repositoryURL + "issues"
