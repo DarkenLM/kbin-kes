@@ -2,7 +2,7 @@
 // @name	KES DEV
 // @namespace	https://github.com/DarkenLM
 // @license	MIT
-// @version	2.2.2-dev171
+// @version	2.2.2-dev172
 // @description	Kbin Enhancement Suite - Development
 // @author	DarkenLM
 // @match https://kbin.social/*
