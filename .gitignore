@@ -1,0 +1,6 @@
+# Generated directories:
+node_modules/
+.vscode/
+
+# Lock files:
+pnpm-lock.yaml

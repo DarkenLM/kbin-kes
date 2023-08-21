@@ -1,0 +1,32 @@
+{
+	"root": true,
+	"parser": "@typescript-eslint/parser",
+	"plugins": ["@typescript-eslint"],
+	"extends": [
+		"eslint:recommended",
+		"plugin:@typescript-eslint/eslint-recommended",
+		"plugin:@typescript-eslint/recommended"
+	],
+	"rules": {
+		"quotes": [
+			"error", 
+			"double",
+			{
+			  "allowTemplateLiterals": true
+			}
+		],
+		"semi": ["error", "always"],
+        "indent": ["error", 4, { "SwitchCase": 1 }]
+    },
+    "overrides": [
+        {
+            "files": ["*.json"],
+            "rules": {
+            "indent": ["error", 2]
+            }
+        }
+    ],
+	"env": {
+		"node": true
+	}
+}

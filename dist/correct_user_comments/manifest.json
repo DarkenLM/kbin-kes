@@ -1,0 +1,32 @@
+{
+    "name": "Correct Comment Links",
+    "author": "DarkenLM",
+    "version": "0.1.0",
+    "label": "Correct Comment Links",
+    "login": false,
+    "recurs": false,
+    "desc": "Corrects comment links if the user comment is not on the first page of a thread with multiple comment pages.",
+    "entrypoint": "correct_comments",
+    "namespace": "correct_user_comments",
+    "fields": [
+        {
+            "type": "select",
+            "initial": "Isolated",
+            "key": "mode",
+            "values": [
+                "Isolated",
+                "Original"
+            ],
+            "label": "Linking Mode"
+        },
+        {
+            "type": "number",
+            "initial": -1,
+            "key": "timeout",
+            "min": -1,
+            "max": 2147483647,
+            "label": "Timeout (in milliseconds). Use -1 for no limit."
+        }
+    ],
+    "page": "threads"
+}

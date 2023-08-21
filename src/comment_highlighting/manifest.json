@@ -1,0 +1,34 @@
+{
+    "name": "Highlight Comment",
+    "author": "DarkenLM",
+    "version": "0.1.0",
+    "label": "Highlight Comment",
+    "login": false,
+    "recurs": false,
+    "desc": "Highlights a comment when following a comment direct link.",
+    "entrypoint": "highlight_comments",
+    "namespace": "highlight_user_comments",
+    "fields": [
+        {
+            "type": "color",
+            "initial": "#ff0000",
+            "key": "border_color",
+            "label": "Highlight border color"
+        },
+        {
+            "type": "number",
+            "initial": 1,
+            "key": "border_size",
+            "min": 0,
+            "max": 16,
+            "label": "Highlight border size (in pixels)."
+        },
+        {
+            "type": "color",
+            "initial": "#ff6666",
+            "key": "highlight_bg_color",
+            "label": "Highlight background color"
+        }
+    ],
+    "page": "threads"
+}

@@ -1,0 +1,43 @@
+{
+  "name": "kbin-ts-api",
+  "version": "1.0.0",
+  "description": "KBin API helper written in Typescript.",
+  "keywords": [],
+  "author": {
+    "name": "DarkenLM",
+    "url": "https://github.com/DarkenLM"
+  },
+  "license": "MIT",
+  "type": "module",
+  "engines": {
+    "node": "18.0.0"
+  },
+  "files": [
+    "dist/"
+  ],
+  "scripts": {
+    "build": "pnpm run version && node .build/.build.cjs",
+    "build:noversion": "node .build/.build.cjs",
+    "clean": "node .build/clean.build.cjs",
+    "clean:all": "pnpm run clean --clean-node-modules",
+    "dev:start": "node dist/__server/index.js",
+    "dev": "pnpm run build -D && pnpm run dev:start",
+    "lint": "eslint --ext .ts --fix src/**/*.ts",
+    "upgrade": "npx pnpm-check -u",
+    "version": "node .build/util/versionIncrement.cjs last"
+  },
+  "devDependencies": {
+    "@types/node": "^20.3.1",
+    "@types/polka": "^0.5.4",
+    "@typescript-eslint/eslint-plugin": "^5.59.11",
+    "@typescript-eslint/parser": "^5.59.11",
+    "cac": "^6.7.14",
+    "esbuild": "^0.18.17",
+    "eslint": "^8.42.0",
+    "minimatch": "^9.0.3",
+    "pnpm": "^8.6.2",
+    "polka": "^0.5.2",
+    "tsx": "3.12.7",
+    "typescript": "^5.1.3"
+  }
+}
