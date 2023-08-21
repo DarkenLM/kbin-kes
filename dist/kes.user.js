@@ -2,9 +2,14 @@
 // @name	KES DEV
 // @namespace	https://github.com/DarkenLM
 // @license	MIT
-// @version	2.2.2-dev159
+// @version	2.2.2-dev171
 // @description	Kbin Enhancement Suite - Development
 // @author	DarkenLM
+// @match https://kbin.social/*
+// @match https://lab2.kbin.pub/*
+// @match https://lab3.kbin.pub/*
+// @match https://fedia.io/*
+// @match https://karab.in/*
 // @match https://kbin.cafe/*
 // @grant GM_addStyle
 // @grant GM_getResourceText
@@ -21,46 +26,48 @@
 // @grant GM.setValue
 // @grant GM.setClipboard
 // @icon	https://kbin.social/favicon.svg
-// @require http://localhost:3000/helpers/safegm.user.js
+// @connect	raw.githubusercontent.com
+// @connect	github.com
+// @require https://github.com/DarkenLM/kbin-kes/raw/rewrite/dist/helpers/safegm.user.js
 // @require https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/highlight.min.js
 // @require http://code.jquery.com/jquery-3.4.1.min.js
-// @require http://localhost:3000/adjust/adjust.user.js
-// @require http://localhost:3000/alpha-sort-subs/alpha-sort-subs.user.js
-// @require http://localhost:3000/always-more/always-more.user.js
-// @require http://localhost:3000/clarify-recipient/clarify-recipient.user.js
-// @require http://localhost:3000/code-highlighting/code-highlighting.user.js
-// @require http://localhost:3000/comment_highlighting/highlight_user_comments.js
-// @require http://localhost:3000/correct_user_comments/correct_user_comments.js
-// @require http://localhost:3000/dropdown/dropdown.user.js
-// @require http://localhost:3000/easy-emoticon/easy-emoticon.user.js
-// @require http://localhost:3000/hide-logo/hide-logo.user.js
-// @require http://localhost:3000/hide-posts/hide-posts.user.js
-// @require http://localhost:3000/hide-sidebar/hide-sidebar.user.js
-// @require http://localhost:3000/hide-thumbs/hide-thumbs.user.js
-// @require http://localhost:3000/hide-votes/hide-votes.user.js
-// @require http://localhost:3000/hover-indicator/hover-indicator.user.js
-// @require http://localhost:3000/improved-collapsible-comments/improved-collapsible-comments.user.js
-// @require http://localhost:3000/instance-names/instance-names.user.js
-// @require http://localhost:3000/kbin-federation-awareness/kbin-federation-awareness.user.js
-// @require http://localhost:3000/label/label.user.js
-// @require http://localhost:3000/mail/mail.user.js
-// @require http://localhost:3000/mobile-cleanup/mobile-cleanup.user.js
-// @require http://localhost:3000/move-federation-warning/move-federation-warning.user.js
-// @require http://localhost:3000/nav-icons/nav-icons.user.js
-// @require http://localhost:3000/notifications-panel/notifications-panel.user.js
-// @require http://localhost:3000/omni/omni.user.js
-// @require http://localhost:3000/rearrange/rearrange.user.js
-// @require http://localhost:3000/report-bug/report-bug.user.js
-// @require http://localhost:3000/resize-text/resize-text.user.js
-// @require http://localhost:3000/subs/subs.user.js
-// @require http://localhost:3000/thread-checkmarks/thread-checkmarks.user.js
-// @require http://localhost:3000/timestamp/timestamp.user.js
-// @require http://localhost:3000/unblur/unblur.user.js
-// @resource kes_layout http://localhost:3000/helpers/ui.json
-// @resource kes_css http://localhost:3000/helpers/kes.css
-// @resource kes_json http://localhost:3000/helpers/manifest.json
-// @downloadURL http://localhost:3000/kes.user.js
-// @updateURL http://localhost:3000/kes.user.js
+// @require https://github.com/DarkenLM/kbin-kes/raw/rewrite/dist/adjust/adjust.user.js
+// @require https://github.com/DarkenLM/kbin-kes/raw/rewrite/dist/alpha-sort-subs/alpha-sort-subs.user.js
+// @require https://github.com/DarkenLM/kbin-kes/raw/rewrite/dist/always-more/always-more.user.js
+// @require https://github.com/DarkenLM/kbin-kes/raw/rewrite/dist/clarify-recipient/clarify-recipient.user.js
+// @require https://github.com/DarkenLM/kbin-kes/raw/rewrite/dist/code-highlighting/code-highlighting.user.js
+// @require https://github.com/DarkenLM/kbin-kes/raw/rewrite/dist/comment_highlighting/highlight_user_comments.js
+// @require https://github.com/DarkenLM/kbin-kes/raw/rewrite/dist/correct_user_comments/correct_user_comments.js
+// @require https://github.com/DarkenLM/kbin-kes/raw/rewrite/dist/dropdown/dropdown.user.js
+// @require https://github.com/DarkenLM/kbin-kes/raw/rewrite/dist/easy-emoticon/easy-emoticon.user.js
+// @require https://github.com/DarkenLM/kbin-kes/raw/rewrite/dist/hide-logo/hide-logo.user.js
+// @require https://github.com/DarkenLM/kbin-kes/raw/rewrite/dist/hide-posts/hide-posts.user.js
+// @require https://github.com/DarkenLM/kbin-kes/raw/rewrite/dist/hide-sidebar/hide-sidebar.user.js
+// @require https://github.com/DarkenLM/kbin-kes/raw/rewrite/dist/hide-thumbs/hide-thumbs.user.js
+// @require https://github.com/DarkenLM/kbin-kes/raw/rewrite/dist/hide-votes/hide-votes.user.js
+// @require https://github.com/DarkenLM/kbin-kes/raw/rewrite/dist/hover-indicator/hover-indicator.user.js
+// @require https://github.com/DarkenLM/kbin-kes/raw/rewrite/dist/improved-collapsible-comments/improved-collapsible-comments.user.js
+// @require https://github.com/DarkenLM/kbin-kes/raw/rewrite/dist/instance-names/instance-names.user.js
+// @require https://github.com/DarkenLM/kbin-kes/raw/rewrite/dist/kbin-federation-awareness/kbin-federation-awareness.user.js
+// @require https://github.com/DarkenLM/kbin-kes/raw/rewrite/dist/label/label.user.js
+// @require https://github.com/DarkenLM/kbin-kes/raw/rewrite/dist/mail/mail.user.js
+// @require https://github.com/DarkenLM/kbin-kes/raw/rewrite/dist/mobile-cleanup/mobile-cleanup.user.js
+// @require https://github.com/DarkenLM/kbin-kes/raw/rewrite/dist/move-federation-warning/move-federation-warning.user.js
+// @require https://github.com/DarkenLM/kbin-kes/raw/rewrite/dist/nav-icons/nav-icons.user.js
+// @require https://github.com/DarkenLM/kbin-kes/raw/rewrite/dist/notifications-panel/notifications-panel.user.js
+// @require https://github.com/DarkenLM/kbin-kes/raw/rewrite/dist/omni/omni.user.js
+// @require https://github.com/DarkenLM/kbin-kes/raw/rewrite/dist/rearrange/rearrange.user.js
+// @require https://github.com/DarkenLM/kbin-kes/raw/rewrite/dist/report-bug/report-bug.user.js
+// @require https://github.com/DarkenLM/kbin-kes/raw/rewrite/dist/resize-text/resize-text.user.js
+// @require https://github.com/DarkenLM/kbin-kes/raw/rewrite/dist/subs/subs.user.js
+// @require https://github.com/DarkenLM/kbin-kes/raw/rewrite/dist/thread-checkmarks/thread-checkmarks.user.js
+// @require https://github.com/DarkenLM/kbin-kes/raw/rewrite/dist/timestamp/timestamp.user.js
+// @require https://github.com/DarkenLM/kbin-kes/raw/rewrite/dist/unblur/unblur.user.js
+// @resource kes_layout https://github.com/DarkenLM/kbin-kes/raw/rewrite/dist/helpers/ui.json
+// @resource kes_css https://github.com/DarkenLM/kbin-kes/raw/rewrite/dist/helpers/kes.css
+// @resource kes_json https://github.com/DarkenLM/kbin-kes/raw/rewrite/dist/helpers/manifest.json
+// @downloadURL https://github.com/DarkenLM/kbin-kes/raw/rewrite/dist/kes.user.js
+// @updateURL https://github.com/DarkenLM/kbin-kes/raw/rewrite/dist/kes.user.js
 // ==/UserScript==
 
 //START AUTO MASTHEAD
@@ -68,18 +75,20 @@
 
 const version = safeGM("info").script.version;
 const tool = safeGM("info").script.name;
-const repositoryURL = "http://localhost:3000/";
+const repositoryURL = "https://github.com/DarkenLM/kbin-kes/";
+const branch = "rewrite"
 const helpersPath = "helpers/"
-const versionFile = repositoryURL + "VERSION";
-const updateURL = repositoryURL + "kes.user.js";
-const bugURL = "https://example.com";
-const changelogURL = "https://example.com";
+const branchPath = repositoryURL + "raw/" + branch + "/"
+const versionFile = branchPath + "VERSION";
+const updateURL = branchPath + "kes.user.js";
+const bugURL = repositoryURL + "issues"
+const changelogURL = repositoryURL + "blob/" + branch + "/CHANGELOG.md"
 const magURL = "https://kbin.social/m/enhancement"
 
 //resource URLs used by legacy GM. API
-const manifest = repositoryURL + helpersPath + "manifest.json"
-const cssURL = repositoryURL + helpersPath + "kes.css"
-const layoutURL = repositoryURL + helpersPath + "ui.json"
+const manifest = branchPath + helpersPath + "manifest.json"
+const cssURL = branchPath + helpersPath + "kes.css"
+const layoutURL = branchPath + helpersPath + "ui.json"
 
 const funcObj = {
     addMail: addMail,
