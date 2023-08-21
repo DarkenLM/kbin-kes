@@ -55,7 +55,6 @@
 // @require https://github.com/DarkenLM/kbin-kes/raw/rewrite/dist/move-federation-warning/move-federation-warning.user.js
 // @require https://github.com/DarkenLM/kbin-kes/raw/rewrite/dist/nav-icons/nav-icons.user.js
 // @require https://github.com/DarkenLM/kbin-kes/raw/rewrite/dist/notifications-panel/notifications-panel.user.js
-// @require https://github.com/DarkenLM/kbin-kes/raw/rewrite/dist/omni/omni.user.js
 // @require https://github.com/DarkenLM/kbin-kes/raw/rewrite/dist/rearrange/rearrange.user.js
 // @require https://github.com/DarkenLM/kbin-kes/raw/rewrite/dist/report-bug/report-bug.user.js
 // @require https://github.com/DarkenLM/kbin-kes/raw/rewrite/dist/resize-text/resize-text.user.js
@@ -71,7 +70,7 @@
 // ==/UserScript==
 
 //START AUTO MASTHEAD
-/* global addMail, adjustSite, alphaSortInit, bugReportInit, checksInit, clarifyRecipientInit, correct_comments, dropdownEntry, easyEmoticon, hidePostsInit, hideSidebar, hideThumbs, hideUpvotes, highlight_comments, hoverIndicator, initCodeHighlights, initCollapsibleComments, initKFA, initMags, labelOp, magInstanceEntry, mobileHideInit, moreInit, moveFederationWarningEntry, navbarIcons, notificationsPanel, omniInit, rearrangeInit, textResize, toggleLogo, unblurInit, updateTime, safeGM, getHex */
+/* global addMail, adjustSite, alphaSortInit, bugReportInit, checksInit, clarifyRecipientInit, correct_comments, dropdownEntry, easyEmoticon, hidePostsInit, hideSidebar, hideThumbs, hideUpvotes, highlight_comments, hoverIndicator, initCodeHighlights, initCollapsibleComments, initKFA, initMags, labelOp, magInstanceEntry, mobileHideInit, moreInit, moveFederationWarningEntry, navbarIcons, notificationsPanel, rearrangeInit, textResize, toggleLogo, unblurInit, updateTime, safeGM, getHex */
 
 const version = safeGM("info").script.version;
 const tool = safeGM("info").script.name;
@@ -117,7 +116,6 @@ const funcObj = {
     moveFederationWarningEntry: moveFederationWarningEntry,
     navbarIcons: navbarIcons,
     notificationsPanel: notificationsPanel,
-    omniInit: omniInit,
     rearrangeInit: rearrangeInit,
     textResize: textResize,
     toggleLogo: toggleLogo,
