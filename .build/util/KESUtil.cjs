@@ -11,19 +11,25 @@ const fs = require("fs");
 const fsp = fs.promises;
 const path = require("path");
 
-function getOwner() {
+function getOwner(crashOnFail) {
     try {
-        const raw = executeCmd("git config --get remote.origin.url", false);
+        const raw = executeCmd("git config --get remote.origin.url", crashOnFail);
         const owner = raw.trim().split(/[:,/]/)[1];
+        
         return owner;
     } catch (e) {
+        if (crashOnFail) {
+            console.error(`Error executing 'getOwner':`, e);
+            process.exit(1);
+        }
+
         return null;
     }
 }
 
 function executeCmd(cmd, crashOnFail) {
     try {
-        const res = childp.execSync(cmd, { encoding: "utf8", stdio: "ignore" });
+        const res = childp.execSync(cmd, { encoding: "utf8" });
         return res;
     } catch (e) {
         if (crashOnFail) {

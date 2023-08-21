@@ -124,8 +124,6 @@ if (require.main === module) {
 
     const args = makeCLI();
 
-    console.log(args)
-
     if (args.options.help) return process.exit(0);
 
     if (args.options.dev) global._buildOptions.dev = true;

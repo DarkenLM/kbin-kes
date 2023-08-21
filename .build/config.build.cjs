@@ -74,11 +74,11 @@ const config = {
         
         github: {
             /** The git branch used for the production-ready KES Script. */
-            branch: executeCmd("git branch --show-current", false) ?? null,
+            branch: "", // PostDec computed
             /** The name of the github directory. */
             name: "kbin-kes",
             /** The owner of the github repository for the production-ready script. */
-            owner: getOwner(),
+            owner: "", // PostDec computed
             /** 
              * The github slug url part.
              * 
@@ -156,9 +156,10 @@ global._buildOptions = options;
 config.kes.distReservedDirs = [config.kes.helpersDir, "__server"]
 config.kes.versionFilePath = getRootedPath(options, path.join(config.kes.libDir, config.kes.versionFile));
 config.kes.version = readFile(config.kes.versionFilePath);
-// config.kes.manifest = `./${config.kes.helpersDir}/manifest.json`
 config.kes.manifest = `./${config.kes.helpersDir}/${config.kes.manifestFile}`
-config.kes.slug = `${config.kes.github.owner}/${config.kes.github.name}`;
+config.kes.github.branch = executeCmd("git branch --show-current", false).replace("\n", "") ?? null;
+config.kes.github.owner = getOwner(true);
+config.kes.github.slug = `${config.kes.github.owner}/${config.kes.github.name}`;
 
 module.exports.config = config;
 module.exports.options = options;
